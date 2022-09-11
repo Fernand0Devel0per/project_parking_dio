@@ -18,6 +18,7 @@ namespace parking_dio.Models
             PriceStart = priceStart;
             PricePerHour = pricePerHour;
             NumberOfVacancies = numberOfVacancies;
+            Vehicle = new Dictionary<string, Vehicle>();
         }
     }
 }

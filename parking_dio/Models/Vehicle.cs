@@ -10,6 +10,7 @@ namespace parking_dio.Models
     {
         public string LicensePlate { get; set; }
         public DateTime EntryTime { get; set; }
+        public DateTime DepartureTime { get; set; }
 
         public Vehicle(string licensePlate)
         {
