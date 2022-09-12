@@ -1,10 +1,6 @@
 ﻿using parking_dio.Strings;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace parking_dio.Services
 {
     public static class ServiceParseNumber
@@ -21,7 +17,7 @@ namespace parking_dio.Services
                 isSucess = decimal.TryParse(Console.ReadLine(), out valueDecimal);
                 if (!isSucess)
                 {
-                    Console.WriteLine(StringMessage._invalidInput);
+                    Console.WriteLine(StringMessage.invalidInput);
                 }
 
             }
@@ -37,7 +33,7 @@ namespace parking_dio.Services
                 isSucess = int.TryParse(Console.ReadLine(), out valueInt);
                 if (!isSucess)
                 {
-                    Console.WriteLine(StringMessage._invalidInput);
+                    Console.WriteLine(StringMessage.invalidInput);
                 }
 
             }
