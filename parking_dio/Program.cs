@@ -1,4 +1,5 @@
-﻿using parking_dio.Models;
+﻿using parking_dio.Auxiliaries.Enums;
+using parking_dio.Models;
 using parking_dio.Services;
 using parking_dio.Strings;
 
@@ -21,8 +22,15 @@ numberOfVacancies = ServiceParseNumber.ReceiveInt(StringMessage.inputnumberOfVac
 //Criando estacionamento
 Parking parking = new Parking(priceStart, pricePerHour, numberOfVacancies);
 
-
 Console.WriteLine();
+
+int option = 0;
+
+ServiceMessages.MenuOptions();
+//while (option == (int)MenuOptions.EndProgram)
+//{
+
+//}
 
 
 
