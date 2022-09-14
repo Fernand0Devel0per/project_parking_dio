@@ -12,13 +12,34 @@ namespace parking_dio.Services
             {
                 ServiceMessages.MenuOptions();
                 option = ServiceParseNumber.ReceiveInt(StringMessage.chooseOptionMessage);
-                if (option < 1 || option > 4)
-                {
-                    ServiceMessages.InvalidOption();
-                    continue;
-                }
+                MakeRequest(option);
             } while (option != (int)MenuOptions.EndProgram);
             
+        }
+
+        private static void MakeRequest(int option)
+        {
+            switch (option)
+            {
+                case (int)MenuOptions.RegisterNewVehicle:
+                    //TODO Metodo que cadastra Veiculo
+                    Console.WriteLine("Cadastrar Veiculo");
+                    break;
+                case (int)MenuOptions.ListAllVehicles:
+                    //TODO Metodo que Lista Veiculos
+                    Console.WriteLine("Listar Veiculo");
+                    break;
+                case (int)MenuOptions.RemoveAVehicle:
+                    //TODO Metodo que Remove Veiculos;
+                    Console.WriteLine("Remover Veiculo");
+                    break;
+                case (int)MenuOptions.EndProgram:
+                    Console.WriteLine("Encerrando o Programa");
+                    break;
+                default:
+                    ServiceMessages.InvalidOption();
+                    break;
+            }
         }
 
     }

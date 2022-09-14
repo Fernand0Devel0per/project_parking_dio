@@ -41,7 +41,9 @@ namespace parking_dio.Services
 
         public static void InvalidOption()
         {
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(StringMessage.invalidOption);
+            Console.ResetColor();
             Thread.Sleep(2000);
             Console.Clear();
         }
