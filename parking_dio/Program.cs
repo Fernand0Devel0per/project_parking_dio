@@ -22,15 +22,10 @@ numberOfVacancies = ServiceParseNumber.ReceiveInt(StringMessage.inputnumberOfVac
 //Criando estacionamento
 Parking parking = new Parking(priceStart, pricePerHour, numberOfVacancies);
 
-Console.WriteLine();
+Console.Clear();
 
-int option = 0;
+ServiceProgram.MenuExecution();
 
-ServiceMessages.MenuOptions();
-//while (option == (int)MenuOptions.EndProgram)
-//{
-
-//}
 
 
 

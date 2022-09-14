@@ -38,5 +38,14 @@ namespace parking_dio.Services
                 Thread.Sleep(500);
             }
         }
+
+        public static void InvalidOption()
+        {
+            Console.WriteLine(StringMessage.invalidOption);
+            Thread.Sleep(2000);
+            Console.Clear();
+        }
+
+        
     }
 }
