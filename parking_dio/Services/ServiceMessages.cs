@@ -48,6 +48,14 @@ namespace parking_dio.Services
             Console.Clear();
         }
 
+        public static void PlateIsNotValid()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(StringMessage.plateIsNotValid);
+            Console.ResetColor();
+            Thread.Sleep(2000);
+        }
+
         
     }
 }

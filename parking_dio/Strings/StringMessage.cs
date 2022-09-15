@@ -16,7 +16,9 @@ namespace parking_dio.Strings
         public static readonly string unregisterNewVehicleOption = $"({(int)MenuOptions.RemoveAVehicle}) Retirar veículo do patio.";
         public static readonly string endProgramOption = $"({(int)MenuOptions.EndProgram}) Encerrar o programa.";
         public static readonly string chooseOptionMessage = "Escolha a opção:";
-        public static readonly string invalidOption = "**Erro** Opção invalida, verifique as opção e escolha uma opção valida";
+        public static readonly string invalidOption = "**Erro** Opção invalida, verifique as opção e escolha uma opção valida.";
+        public static readonly string whatIsThePlate = "Informe a placa do Veiculo:";
+        public static readonly string plateIsNotValid = "Esta placa não é valida.";
 
     }
 }

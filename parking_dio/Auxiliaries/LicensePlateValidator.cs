@@ -9,7 +9,7 @@ namespace parking_dio.Auxiliaries
 {
     public static class LicensePlateValidator
     {
-        private static bool ValidatorPlate(string plate)
+        public static bool ValidatorPlate(string plate)
         {
             if (string.IsNullOrWhiteSpace(plate)) { return false; }
 
