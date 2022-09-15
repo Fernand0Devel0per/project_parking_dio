@@ -19,6 +19,8 @@ namespace parking_dio.Strings
         public static readonly string invalidOption = "**Erro** Opção invalida, verifique as opção e escolha uma opção valida.";
         public static readonly string whatIsThePlate = "Informe a placa do Veiculo:";
         public static readonly string plateIsNotValid = "Esta placa não é valida.";
+        public static readonly string successRegisterVehicle = "O Veiculo foi cadastrado com sucesso.";
+        public static readonly string parkingIsFull = "O Estacionamento esta cheio.";
 
     }
 }

@@ -52,7 +52,13 @@ namespace parking_dio.Services
         {
             string licensePlate = string.Empty;
             licensePlate = ValidadePlate();
-
+            if (_parking.IsNotFull)
+            {
+                _parking.Vehicles.Add(licensePlate, new Vehicle(licensePlate));
+                Console.WriteLine(StringMessage.successRegisterVehicle);
+            }
+            else Console.WriteLine(StringMessage.parkingIsFull);
+            
         }
 
         private static string ValidadePlate()
