@@ -14,5 +14,7 @@
             NumberOfVacancies = numberOfVacancies;
             Vehicle = new Dictionary<string, Vehicle>();
         }
+
+        public bool IsFull => NumberOfVacancies >= Vehicle.Count;
     }
 }

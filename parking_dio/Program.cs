@@ -24,7 +24,7 @@ Parking parking = new Parking(priceStart, pricePerHour, numberOfVacancies);
 
 Console.Clear();
 
-ServiceProgram.MenuExecution();
+ServiceProgram.MenuExecution(parking);
 
 
 
