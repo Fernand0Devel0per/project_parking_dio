@@ -1,4 +1,6 @@
-﻿namespace parking_dio.Models
+﻿using System.Globalization;
+
+namespace parking_dio.Models
 {
     public class Vehicle
     {
@@ -12,7 +14,12 @@
             EntryTime = DateTime.Now;
         }
 
+        public override string ToString()
+        {
+            return $"Placa:{LicensePlate}, Entrada: {EntryTime.ToString("h:mm",CultureInfo.InvariantCulture)}";
+        }
 
-       
+
+
     }
 }

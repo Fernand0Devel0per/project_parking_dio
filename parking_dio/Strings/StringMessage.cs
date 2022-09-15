@@ -21,6 +21,8 @@ namespace parking_dio.Strings
         public static readonly string plateIsNotValid = "Esta placa não é valida.";
         public static readonly string successRegisterVehicle = "O Veiculo foi cadastrado com sucesso.";
         public static readonly string parkingIsFull = "O Estacionamento esta cheio.";
+        public static readonly string finishListVehicles = "Tecle qualquer tecla para volta ao menu.";
+        public static readonly string notExistVehicles = "Não existem veiculos no estacionamento neste momento.";
 
     }
 }

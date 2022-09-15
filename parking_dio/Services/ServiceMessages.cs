@@ -56,6 +56,13 @@ namespace parking_dio.Services
             Thread.Sleep(2000);
         }
 
+        public static void ExitListVehicles()
+        {
+            Console.WriteLine(StringMessage.finishListVehicles);
+            Console.ReadKey();
+            Console.Clear();
+        }
+
         
     }
 }
