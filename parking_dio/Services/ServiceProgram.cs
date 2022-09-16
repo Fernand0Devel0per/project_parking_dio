@@ -31,11 +31,11 @@ namespace parking_dio.Services
                     RegisterNewVehicle();
                     break;
                 case (int)MenuOptions.ListAllVehicles:
-                    //TODO Metodo que Lista Veiculos
                     ListAllVehicles();
                     break;
                 case (int)MenuOptions.RemoveAVehicle:
                     //TODO Metodo que Remove Veiculos;
+                    Console.WriteLine(_parking.TotalToPay(_parking.Vehicles["asd4545"]));
                     Console.WriteLine("Remover Veiculo");
                     break;
                 case (int)MenuOptions.EndProgram:
@@ -54,13 +54,12 @@ namespace parking_dio.Services
             if (_parking.IsNotFull)
             {
                 _parking.Vehicles.Add(licensePlate, new Vehicle(licensePlate));
-                Console.WriteLine(StringMessage.successRegisterVehicle);
-                Thread.Sleep(2000);
-                Console.Clear();
+                ServiceMessages.MessageAndClear(StringMessage.successRegisterVehicle);
             }
-            else Console.WriteLine(StringMessage.parkingIsFull);
-            Thread.Sleep(2000);
-            Console.Clear();
+            else
+            {
+                ServiceMessages.MessageAndClear(StringMessage.parkingIsFull);
+            }
         }
 
         private static string ValidadePlate()
@@ -91,9 +90,7 @@ namespace parking_dio.Services
             }
             else
             {
-                Console.WriteLine(StringMessage.notExistVehicles);
-                Thread.Sleep(2000);
-                Console.Clear();
+                ServiceMessages.MessageAndClear(StringMessage.notExistVehicles);
             }
             
 

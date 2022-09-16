@@ -63,6 +63,13 @@ namespace parking_dio.Services
             Console.Clear();
         }
 
-        
+        public static void MessageAndClear(string message)
+        {
+            Console.WriteLine(message);
+            Thread.Sleep(2000);
+            Console.Clear();
+        }
+
+
     }
 }
