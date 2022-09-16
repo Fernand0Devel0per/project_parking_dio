@@ -23,6 +23,9 @@ namespace parking_dio.Strings
         public static readonly string parkingIsFull = "O Estacionamento esta cheio.";
         public static readonly string finishListVehicles = "Tecle qualquer tecla para volta ao menu.";
         public static readonly string notExistVehicles = "Não existem veiculos no estacionamento neste momento.";
-
+        public static readonly string vehicleDoesNotExist = "Veiculo não foi encontrado no estacionamento.";
+        public static readonly string totalToPay = "O valor total a se pagar é:";
+        public static readonly string vehicleRemoved = "O veiculo foi removido obrigado.";
+        public static readonly string exitProgram = "Encerrando o Programa.";
     }
 }

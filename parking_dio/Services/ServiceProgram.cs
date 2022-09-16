@@ -2,6 +2,7 @@
 using parking_dio.Auxiliaries.Enums;
 using parking_dio.Models;
 using parking_dio.Strings;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace parking_dio.Services
@@ -34,12 +35,10 @@ namespace parking_dio.Services
                     ListAllVehicles();
                     break;
                 case (int)MenuOptions.RemoveAVehicle:
-                    //TODO Metodo que Remove Veiculos;
-                    Console.WriteLine(_parking.TotalToPay(_parking.Vehicles["asd4545"]));
-                    Console.WriteLine("Remover Veiculo");
+                    RemoveVehicle();
                     break;
                 case (int)MenuOptions.EndProgram:
-                    Console.WriteLine("Encerrando o Programa");
+                    ServiceMessages.MessageAndClear(StringMessage.exitProgram);
                     break;
                 default:
                     ServiceMessages.InvalidOption();
@@ -92,8 +91,43 @@ namespace parking_dio.Services
             {
                 ServiceMessages.MessageAndClear(StringMessage.notExistVehicles);
             }
-            
+        }
 
+        private static void RemoveVehicle()
+        {
+            string licensePlate = ValidadePlate();
+            if (ValidateRemove(licensePlate))
+            {
+                Console.Write(StringMessage.totalToPay);
+                Console.WriteLine($"R${_parking.TotalToPay(_parking.Vehicles[licensePlate]).ToString("N2")}");
+                RemoveAndSave(_parking.Vehicles[licensePlate]);
+                ServiceMessages.MessageAndClear(StringMessage.vehicleRemoved);
+            }
+            
+        }
+
+        private static bool ValidateRemove(string plate)
+        {
+            if(_parking.Vehicles.Count == 0)
+            {
+                ServiceMessages.MessageAndClear(StringMessage.notExistVehicles);
+                return false;
+            }
+            if (!_parking.Vehicles.ContainsKey(plate))
+            {
+                ServiceMessages.MessageAndClear(StringMessage.vehicleDoesNotExist);
+                return false;
+            }
+            return true;
+        }
+
+        private static void RemoveAndSave(Vehicle vehicle)
+        {
+            var newVehicle = new Vehicle(vehicle.LicensePlate);
+            newVehicle.EntryTime = vehicle.EntryTime;
+            newVehicle.DepartureTime = DateTime.Now;
+            _parking.VehiclesRemoved.Add(newVehicle);
+            _parking.Vehicles.Remove(vehicle.LicensePlate);
         }
 
     }
