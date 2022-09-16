@@ -20,7 +20,11 @@
         public bool IsNotFull => NumberOfVacancies > Vehicles.Count;
         public decimal TotalToPay(Vehicle vehicle)
         {
-            return PriceStart + ((PricePerHour / 60) * (((vehicle.EntryTime.Hour * 60) + vehicle.EntryTime.Minute) - (DateTime.Now.Hour * 60) + DateTime.Now.Minute));
+            decimal pricePerMinute = (PricePerHour / 60);
+            int timeStart = (vehicle.EntryTime.Hour * 60) + vehicle.EntryTime.Minute;
+            int timeEnd = (DateTime.Now.Hour * 60) + DateTime.Now.Minute;
+            int totalTime = timeEnd - timeStart;
+            return PriceStart + (pricePerMinute * totalTime);
         }
     }
 }

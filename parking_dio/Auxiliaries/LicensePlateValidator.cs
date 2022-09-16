@@ -20,13 +20,13 @@ namespace parking_dio.Auxiliaries
             if (char.IsLetter(plate, 4))
             {
 
-                var padraoMercosul = new Regex("[a-zA-Z]{3}[0-9]{1}[a-zA-Z]{1}[0-9]{2}");
-                return padraoMercosul.IsMatch(plate);
+                var defaultMercosul = new Regex("[a-zA-Z]{3}[0-9]{1}[a-zA-Z]{1}[0-9]{2}");
+                return defaultMercosul.IsMatch(plate);
             }
             else
             {
-                var padraoNormal = new Regex("[a-zA-Z]{3}[0-9]{4}");
-                return padraoNormal.IsMatch(plate);
+                var defaultNormal = new Regex("[a-zA-Z]{3}[0-9]{4}");
+                return defaultNormal.IsMatch(plate);
             }
         }
     }

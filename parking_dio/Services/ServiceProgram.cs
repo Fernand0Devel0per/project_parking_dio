@@ -52,8 +52,16 @@ namespace parking_dio.Services
             licensePlate = ValidadePlate();
             if (_parking.IsNotFull)
             {
-                _parking.Vehicles.Add(licensePlate, new Vehicle(licensePlate));
-                ServiceMessages.MessageAndClear(StringMessage.successRegisterVehicle);
+                if (_parking.Vehicles.ContainsKey(licensePlate))
+                {
+                    ServiceMessages.MessageAndClear(StringMessage.vehicleExist);
+                }
+                else
+                {
+                    _parking.Vehicles.Add(licensePlate, new Vehicle(licensePlate));
+                    ServiceMessages.MessageAndClear(StringMessage.successRegisterVehicle);
+                }
+                
             }
             else
             {
@@ -99,11 +107,10 @@ namespace parking_dio.Services
             if (ValidateRemove(licensePlate))
             {
                 Console.Write(StringMessage.totalToPay);
-                Console.WriteLine($"R${_parking.TotalToPay(_parking.Vehicles[licensePlate]).ToString("N2")}");
+                Console.WriteLine($"R${_parking.TotalToPay(_parking.Vehicles[licensePlate]).ToString("C")}");
                 RemoveAndSave(_parking.Vehicles[licensePlate]);
                 ServiceMessages.MessageAndClear(StringMessage.vehicleRemoved);
             }
-            
         }
 
         private static bool ValidateRemove(string plate)

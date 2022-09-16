@@ -27,5 +27,6 @@ namespace parking_dio.Strings
         public static readonly string totalToPay = "O valor total a se pagar é:";
         public static readonly string vehicleRemoved = "O veiculo foi removido obrigado.";
         public static readonly string exitProgram = "Encerrando o Programa.";
+        public static readonly string vehicleExist = "Este veiculo já esta cadastrado.";
     }
 }
